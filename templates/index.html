@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <meta name="viewport" content="initial-scale=1, width=device-width">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
@@ -11,7 +13,7 @@
     <body>
         <section>
             <h1>Your ToDo List</h1>
-            <form>
+            <form method="post" action="/add">
                 <input type="text" autocomplete="off" autofocus id="title" name="title">
                 <a id="titleLabel">Title</a><br><br>
                 <textarea type="text" autocomplete="off" id="desc" name="desc"></textarea>
@@ -21,6 +23,14 @@
         </section>
         <main>
             <h1>Here are your todo's</h1>
+            <table>
+                <tr>
+                    {% for row in todos %}
+                        <th>{{ row[0] }}</th>
+                        <td>{{ row[1] }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
         </main>
     </body>
 </html>

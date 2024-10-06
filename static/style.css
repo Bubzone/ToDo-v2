@@ -22,6 +22,7 @@ section {
 main{
     display: flex;
     float: left;
+    flex-direction: column;
     width: 50%;
     height: auto;
 }
