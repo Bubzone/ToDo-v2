@@ -27,6 +27,28 @@ main{
     height: auto;
 }
 
+table{
+    font-size: 2vw;
+    text-align: left;
+    border-collapse: collapse;
+}
+td, th{
+    border-bottom: 2px solid rgba(96, 108, 163, 0.459);
+}
+
+th{
+    padding-left: 2%;
+    width: 25%;
+    height: auto;
+}
+
+td{
+    width: 55%;
+    height: auto;
+    padding-left: 5%;
+}
+
+
 #title{
     
     height: 78px;
@@ -74,7 +96,7 @@ main{
 }
 
 #add{
-    width: 200px;
+    width: 10vw;
     height: 50px;
     border-radius: 62px;
     position: relative;
@@ -84,7 +106,19 @@ main{
     line-height: 66px;
     margin-left: 194px;
     top: -194px;
-    color: #FAE7F3;
+    color: #494347;
+    font-family: The Girl Next Door;
+}
+
+#delete{
+    position: relative;
+    width: 80%;
+    height: 10%;
+    border-radius: 30px;
+    background: #E6B9DE;
+    font-size: 28px;
+    line-height: 66px;
+    color: #494347;
     font-family: The Girl Next Door;
 }
 

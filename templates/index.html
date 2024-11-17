@@ -24,12 +24,18 @@
         <main>
             <h1>Here are your todo's</h1>
             <table>
-                <tr>
-                    {% for row in todos %}
-                        <th>{{ row[0] }}</th>
-                        <td>{{ row[1] }}</td>
-                    {% endfor %}
-                </tr>
+                {% for row in todos %}
+                    <tr>
+                        <th>{{ row[1] }}</th>
+                        <td>{{ row[2] }}</td>
+                        <td id="btt">
+                            <form method="post" action="/delete">
+                                <input type="hidden" id="rowID" name="rowID" value="{{ row[0] }}">
+                                <button type="submit" id="delete">DONE!</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
             </table>
         </main>
     </body>

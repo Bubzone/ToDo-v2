@@ -27,10 +27,19 @@ def add():
     title = request.form.get("title")
     desc = request.form.get("desc")
 
-    print(f"Title: {title}, Description: {desc}")
     con = connect_db()
     cur = con.cursor()
     cur.execute("INSERT INTO todos (title, desc) VALUES (?, ?);", (title, desc))
+    con.commit()
+    con.close()
+    return redirect("/")
+
+@app.route("/delete", methods = ["POST"])
+def delete():
+    id = request.form.get("rowID")
+    con = connect_db()
+    cur = con.cursor()
+    cur.execute("DELETE FROM todos WHERE id=?;", id)
     con.commit()
     con.close()
     return redirect("/")
